@@ -1,0 +1,937 @@
+@charset "UTF-8";
+
+@font-face {
+	font-family: 'Inkqua';
+	/* 自定义字体名称 */
+	src: url('./font/Inknut_Antiqua/InknutAntiqua-Light.ttf') format('truetype');
+	/* TTF 字体文件的路径 */
+}
+
+@font-face {
+	font-family: 'Mantous';
+	/* 自定义字体名称 */
+	src: url('./font/MantouSans-Regular.ttf') format('truetype');
+	/* TTF 字体文件的路径 */
+}
+
+/* 咒語 - 消除所有預設 */
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+	display: block;
+}
+
+body {
+	line-height: 1;
+}
+
+ol,
+ul {
+	list-style: none;
+}
+
+blockquote,
+q {
+	quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+	content: '';
+	content: none;
+}
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+	font-family:
+		-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu, "Helvetica Neue", Helvetica, Arial,
+		"PingFang TC", "Heiti TC", "Microsoft JhengHei", "Noto Sans TC", sans-serif;
+}
+
+p {
+	color: #f2edf0;
+}
+
+:root {
+	--light_grey: #ccc;
+	--grey: #999;
+	--deep_grey: #444;
+	--major-color: #f2edf0;
+	--major-color2: #e6ece5;
+	--major-color3: #ecf0f4;
+	--lesser-color1: #bf9899;
+}
+
+
+a {
+	display: block;
+	color: var(--deep_grey);
+	text-decoration: none;
+}
+
+/* 咒語 - 消除所有預設 */
+
+body {
+	background-color: #000;
+	font-family: 'Inkqua', sans-serif;
+}
+
+a {
+	color: #f2edf0;
+	transition: color 0.3s ease;
+	/* 添加背景色過渡效果 */
+}
+
+a:hover {
+	color: rgba(255, 255, 255, 0.25);
+}
+
+.mantou {
+	font-family: 'Mantous', sans-serif;
+	font-size: 28px;
+	font-weight: 100;
+	letter-spacing: 5px;
+}
+
+p a {
+	color: #f2edf0;
+	display: flex;
+	margin: -11% 0 7% 85%;
+}
+
+.H1 {
+	display: flex;
+	/* 将 .H1 设置为 Flex 容器 */
+	align-items: center;
+	/* 沿交叉轴（垂直方向）居中对齐 */
+}
+
+.H1 img {
+	position: relative;
+	left: 80px;
+}
+
+.Nav {
+	margin-top: 60px;
+	margin-left: auto;
+}
+
+ul {
+	display: flex;
+	flex-direction: row;
+	color: antiquewhite;
+}
+
+li {
+	position: relative;
+	font-size: 16px;
+	height: 120px;
+	margin: 40px 60px 0px 60px;
+	right: 40px;
+}
+
+.Banner {
+	position: relative;
+	display: flex;
+	flex-direction: row;
+	width: 100%;
+	/* 将元素宽度设置为视窗宽度 */
+	margin: 0 auto;
+	overflow: hidden;
+	/* 隱藏超出 Banner 部分的 tri 元素 */
+
+}
+
+
+
+.overlay {
+	position: absolute;
+	/* 设置绝对定位 */
+	top: 0;
+	/* 与父元素顶部对齐 */
+	left: 0;
+	/* 与父元素左侧对齐 */
+	width: 100%;
+	/* 设置宽度为父元素宽度 */
+	height: 100%;
+	/* 设置高度为父元素高度 */
+	background: linear-gradient(to right, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.35) 50%, rgba(0, 0, 0, 0.7) 100%);
+	/* 添加渐变背景 */
+	pointer-events: none;
+	/* 禁止渐变层接受鼠标事件，以便子元素可以正常响应 hover 效果 */
+	z-index: 5;
+}
+
+/* 三角形遮罩+ */
+
+
+
+.tri {
+	position: relative;
+	/* 设置相对定位，让子元素可以相对于父元素定位 */
+	width: 100%;
+	/* 设置元素宽度为父元素的宽度 */
+	height: 100%;
+	/* 设置元素高度为父元素的高度 */
+}
+
+.work1 {
+	position: relative;
+	margin: 1% -25% 0 0%;
+	width: 50%;
+	height: 50%;
+	clip-path: polygon(0% 0%, 0% 86%, 50% 86%);
+}
+
+.work2,
+.work4 {
+	position: relative;
+	margin: 1% 0 0 -15%;
+	width: 50%;
+	height: 50%;
+	clip-path: polygon(0% 0%, 50% 86%, 100% 0%);
+}
+
+.work3 {
+	position: relative;
+	margin: 1% 0 0 -15%;
+	width: 50%;
+	height: 50%;
+	clip-path: polygon(50% 0%, 0% 86%, 100% 86%);
+}
+
+
+/* 作品 */
+
+
+.work1 img {
+	position: relative;
+	top: 3vh;
+	left: -48%;
+	width: 50vw;
+}
+
+.work2 img {
+	position: relative;
+	top: -13%;
+	left: -40%;
+	width: 89vw;
+}
+
+.work3 img {
+	position: relative;
+	top: -15%;
+	left: 0%;
+	width: 50vw;
+}
+
+.work4 img {
+	position: relative;
+	top: -10%;
+	left: -40%;
+	width: 70vw;
+}
+
+/* Experience */
+
+/* Experience ani*/
+
+
+/* keyfeame - experience */
+
+@keyframes fadeInUp {
+	from {
+		opacity: 0;
+		transform: translateY(200px);
+	}
+
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+@keyframes fadeInUp_s {
+	from {
+		opacity: 0;
+		transform: translateY(50px);
+	}
+
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+
+.trip {
+	opacity: 0;
+	animation: fadeInUp 3s ease forwards;
+}
+
+.triggered {
+	opacity: 1 !important;
+	animation: none !important;
+}
+
+
+
+h2 {
+	color: #f2edf0;
+	font-size: 3rem;
+	display: flex;
+	justify-content: center;
+	margin: 0 auto 5% auto;
+	padding: 0 0 10vh 0;
+	border-bottom: #f2edf0 solid 3px;
+	width: 60%;
+}
+
+.trip {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	width: 60%;
+	margin: 0 auto 5%;
+	padding: 0 0 5%;
+	border-bottom: #f2edf0 solid 1px;
+	font-size: 20px;
+	letter-spacing: 0.35rem
+}
+
+.trip_one {
+	margin-right: 53%;
+}
+
+.trip_two {
+	display: flex;
+}
+
+.trip_thr {
+	margin: 0 3%;
+}
+
+.noline {
+	border-bottom: none;
+}
+
+
+
+@keyframes move {
+	0% {
+		left: 0px;
+		opacity: 0%;
+	}
+
+	50% {
+		left: 20px;
+		opacity: 40%;
+	}
+
+	100% {
+		left: 0px;
+		opacity: 100%;
+	}
+}
+
+.square1 {
+	position: relative;
+	width: 221px;
+	height: 183px;
+	margin: 15% 0% 0 -10%;
+	padding: 0 0% 0 10%;
+	animation: move 3s ease;
+}
+
+.square2 {
+	position: relative;
+	width: 260px;
+	height: 365px;
+	overflow: hidden; /* 確保裁剪區域之外的內容不可見 */
+	margin: 3% 10% 0% 10%;
+	animation: move 3s ease;
+	animation-delay: 0.3s;
+
+}
+
+.square2 img{
+	max-width: 280%;
+    margin: -90% 36% -90% -90%;
+}
+
+.mature {
+	font-size: 1rem;
+	line-height: 3em;
+	margin: 5% -13% 0 0;
+	opacity: 0;
+	/* 初始透明度為 0 */
+	transform: translateY(5px);
+	/* 初始位置在視窗下方 */
+	animation: fadeInUp_s 4s ease forwards;
+	/* 動畫：淡入由下到上，持續 1 秒，使用 ease 函數 */
+}
+
+.mature2 {
+	display: none;
+}
+
+.lifetalks img {
+	width: 3%;
+	height: 3%;
+	margin: 0 2% 0;
+}
+
+.life {
+	margin-right: 50%;
+}
+
+.life2 {
+	margin-right: 35%;
+}
+
+.talks {
+	margin: 0 auto 1%;
+}
+
+.talk_a {
+	color: #f2edf0;
+	display: flex;
+	margin: -7% 0 7% 85%;
+}
+
+.trip.product,
+.title {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-content: center;
+	width: 70%;
+	margin: 0 auto 5%;
+	padding: 0 0 0%;
+	border-bottom: none
+}
+
+.product .center {
+	margin: 0 10%;
+}
+
+.t1 {
+	position: relative;
+	/* 設置位置為相對位置 */
+	margin: -5% 0 0 0%;
+	transform: rotate(-18deg);
+	/* 旋轉-15度 */
+	transition: transform 0.5s ease;
+	/* 添加過渡效果 */
+	letter-spacing: 10px;
+	font-weight: 100;
+}
+
+.t2 {
+	position: relative;
+	/* 設置位置為相對位置 */
+	margin: -4% 10% 0 0%;
+	transform: rotate(18deg);
+	/* 旋轉-15度 */
+	transition: transform 0.5s ease;
+	/* 添加過渡效果 */
+	letter-spacing: 10px;
+	font-weight: 100;
+}
+
+.t3 {
+	position: relative;
+	/* 設置位置為相對位置 */
+	margin: -5% 3% 0 -5%;
+	transform: rotate(-13deg);
+	/* 旋轉-15度 */
+	transition: transform 0.5s ease;
+	/* 添加過渡效果 */
+	letter-spacing: 10px;
+	font-weight: 100;
+}
+
+.t1:hover,
+.t2:hover,
+.t3:hover {
+	transform: rotate(0deg);
+	/* 鼠標懸停時取消旋轉 */
+}
+
+.trip.q {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	width: 60%;
+	/* 內層元素撐滿外層元素 */
+	background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.27), rgba(255, 255, 255, 0.08));
+	border-radius: 32px;
+	margin: 2% auto;
+	padding: 22px 64px;
+}
+
+#content,
+#content2,
+#content3 {
+	width: 60%;
+	margin: 0% auto;
+	top: 125%;
+	font-size: 1rem;
+	font-weight: 100;
+	line-height: 1.6rem;
+	background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.27), rgba(255, 255, 255, 0.08));
+	border-radius: 32px;
+	margin: 2% auto;
+	padding: 22px 64px;
+}
+
+.trip.q+#content {
+	margin-top: 10px;
+	/* 設置與下一個 .trip q 元素的間距 */
+}
+
+
+.trip_one.p {
+	margin-right: 30%;
+}
+
+.trip_drop {
+	margin: 0;
+}
+
+
+.FAQ_a {
+	color: #f2edf0;
+	display: flex;
+	margin: -3% 0 0% 85%;
+}
+
+footer {
+	display: flex;
+	justify-content: space-between;
+	width: 90%;
+	margin: 10% auto 0%;
+}
+
+footer img {
+	width: 10%;
+	height: auto;
+}
+
+#footer_back {
+    cursor: pointer;
+}
+
+footer div {
+	display: flex;
+	flex-direction: column;
+	align-items: end;
+	margin-top: 2%;
+	line-height: 1.6rem;
+	letter-spacing: 3px;
+}
+
+@media screen and (min-width: 320px) and (max-width: 780px) {
+	body {
+		overflow-x: hidden;
+	}
+
+	/* Header */
+
+	.H1 {
+		display: flex;
+	}
+
+	.H1 a {
+		display: flex;
+		justify-content: flex-start;
+		width: 60%;
+	}
+
+	.H1 img {
+		position: relative;
+		left: 8%;
+		width: 60%;
+	}
+
+	.Nav ul {
+		display: none;
+		flex-direction: column;
+		align-items: center;
+		position: absolute;
+		z-index: 30;
+		background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.95) 0%, rgba(0, 0, 0, 0.7) 50%, rgba(0, 0, 0, 0.9) 100%);
+		/* 背景漸層 */
+		height: 100vh;
+		width: 100vw;
+		left: 0;
+		/* 将ul放在H1的下方 */
+	}
+
+	.Nav li {
+		position: relative;
+		font-size: 0.5rem;
+		width: 50%;
+		margin: 0px 0px 0px 0px;
+		right: 0px;
+	}
+
+
+	.Nav li a {
+		position: absolute;
+		margin: 40% 0px 0px 0px;
+		right: 0px;
+	}
+
+	/* 顯示漢堡按鈕 */
+	.burger-menu {
+		display: flex;
+		flex-direction: column;
+		position: absolute;
+		top: 3%;
+		right: 6%;
+		width: 7%;
+		height: auto;
+	}
+
+	.burger {
+		height: 3px;
+		width: 100%;
+		background-color: #f2edf0;
+		margin-bottom: 25%;
+		border-radius: 15%;
+	}
+
+	/* Banner */
+
+	.Banner {
+		width: auto;
+		height: 70vh;
+		overflow: hidden;
+		/* 隐藏超出宽度的内容 */
+	}
+
+	.work1 {
+		margin: 0% 0% 0 -50%;
+		width: 100%;
+		height: 80%;
+		clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+		/* 创建正三角形的遮罩 */
+	}
+
+	.work1 img {
+		width: 185%;
+		top: -1vh;
+		left: -60%;
+	}
+
+	.work2 {
+		margin: 0% -50% 0 -25%;
+		width: 100%;
+		height: 80%;
+		clip-path: polygon(0% 0%, 50% 100%, 100% 0%);
+		overflow: hidden;
+	}
+
+	.work2 img {
+		width: 185%;
+		top: -1vh;
+		overflow: hidden;
+	}
+
+	.work3,
+	.work4 {
+		display: none;
+	}
+
+	/* H2 */
+
+	h2 {
+		font-size: 2rem;
+		margin: 20% auto;
+	}
+
+	/* experience */
+
+	.experience {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		width: 100%;
+		overflow: hidden;
+	}
+
+	.experience p {
+		justify-content: center;
+		width: 100%;
+		font-size: 0.8rem;
+
+	}
+
+	p a {
+		width: 100%;
+		font-size: 0.6rem;
+		justify-content: center;
+		margin: 5% auto 20%;
+	}
+
+	/* portfolio */
+
+	.square1 {
+		position: relative;
+		width: 190px;
+		height: 135px;
+		background-color: #f2edf0;
+		margin: 15% 0% 20% -40%;
+	}
+
+	.square2 {
+		position: relative;
+		width: 220px;
+		height: 300px;
+		background-color: #f2edf0;
+		margin: 3% 0% 0% 10%;
+		animation: move 3s ease;
+		animation-delay: 0.3s;
+	}
+
+	.mature {
+		display: none;
+	}
+
+	.mature2 {
+		display: flex;
+		font-size: 0.7rem;
+		line-height: 2em;
+		text-align: center;
+		margin: 20% 0%;
+		opacity: 0;
+		/* 初始透明度為 0 */
+		transform: translateY(5px);
+		/* 初始位置在視窗下方 */
+		animation: fadeInUp_s 4s ease forwards;
+		/* 動畫：淡入由下到上，持續 1 秒，使用 ease 函數 */
+	}
+
+	/* lifetalks */
+
+
+	.trip {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		width: 60%;
+		letter-spacing: 0.05rem;
+	}
+
+	.lifetalks img {
+		width: 10%;
+	}
+
+	.trip_one {
+		font-size: 1.4rem;
+		text-align: center;
+		margin: 15% auto;
+	}
+
+
+	.trip_two {
+		text-align: center;
+		justify-content: space-between;
+		margin-bottom: 15%;
+	}
+
+	.talk_a {
+		width: 100%;
+		font-size: 0.6rem;
+		justify-content: center;
+		margin: 5% auto 20%;
+	}
+
+	/* product  */
+
+	.trip.product,
+	.title {
+		display: flex;
+		flex-direction: column;
+	}
+
+	.trip.product img {
+		width: 60%;
+		margin: 20% auto;
+	}
+
+	.mantou {
+		font-size: 1rem;
+	}
+
+	.t1 {
+		margin: -220% 0 0 20%;
+	}
+
+	.t2 {
+		margin: 5% 10% 0 10%;
+	}
+
+	.t3 {
+		margin: 0% 0% 7% 35%;
+	}
+
+	/* FAQ */
+
+	.trip.q {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		width: 85%;
+		border-radius: 24px;
+		padding: 6px 32px;
+		margin: 15% auto;
+	}
+
+	.trip.q p {
+		font-size: 1rem;
+		justify-content: flex-start;
+		align-items: flex-start;
+	}
+
+	#content,
+	#content2,
+	#content3 {
+		width: 85%;
+		}
+
+	.FAQ_a{
+		width: 100%;
+		font-size: 0.6rem;
+		justify-content: center;
+		margin: 5% auto 20%;
+	}
+
+	footer {
+		flex-direction: column;
+		align-items: center;
+		font-size: 0.7rem;
+	}
+
+	footer img {
+		width: 45%;
+		margin: 10% auto;
+	}
+
+	footer div {
+		align-items: center;
+		margin-top: 2%;
+		line-height: 1.6rem;
+		letter-spacing: 1px;
+		margin-bottom: 5%;
+	}
+}
